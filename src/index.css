@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 228 12% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 228 14% 11%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 228 14% 11%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 165 80% 48%;
+    --primary-foreground: 228 12% 8%;
+
+    --secondary: 228 14% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 228 12% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 250 70% 60%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 72% 56%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 152 70% 45%;
+    --success-foreground: 228 12% 8%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 228 12% 8%;
+
+    --border: 228 14% 18%;
+    --input: 228 14% 16%;
+    --ring: 165 80% 48%;
+
+    --radius: 0.75rem;
+
+    --glass: 228 14% 12% / 0.6;
+    --glass-border: 228 14% 22% / 0.4;
+    --glow-primary: 165 80% 48%;
+    --glow-destructive: 0 72% 56%;
+
+    --sidebar-background: 228 14% 9%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 165 80% 48%;
+    --sidebar-primary-foreground: 228 12% 8%;
+    --sidebar-accent: 228 14% 16%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 228 14% 18%;
+    --sidebar-ring: 165 80% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/40 rounded-2xl shadow-lg shadow-black/5;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.15)] hover:-translate-y-0.5;
+  }
+
+  .glow-success {
+    box-shadow: 0 0 40px -10px hsl(var(--success) / 0.4),
+                0 0 80px -20px hsl(var(--success) / 0.2);
+    border-color: hsl(var(--success) / 0.5);
+  }
+
+  .glow-destructive {
+    box-shadow: 0 0 40px -10px hsl(var(--destructive) / 0.4),
+                0 0 80px -20px hsl(var(--destructive) / 0.2);
+    border-color: hsl(var(--destructive) / 0.5);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  .gradient-bg {
+    background: radial-gradient(ellipse 80% 60% at 50% -20%, hsl(var(--primary) / 0.12), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 50%, hsl(var(--accent) / 0.06), transparent),
+                hsl(var(--background));
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.08), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
