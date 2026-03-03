@@ -30,7 +30,7 @@ The system performs:
 
 ### Landing Page
 
-![Landing Page](./trutht-home.png)
+![Landing Page](public/trutht-home.png)
 
 ---
 

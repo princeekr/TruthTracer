@@ -26,3 +26,6 @@ dist-ssr
 
 *.pkl
 *.csv
+
+FakeNews/Fake.csv
+FakeNews/True.csv
