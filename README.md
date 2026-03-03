@@ -36,13 +36,13 @@ The system performs:
 
 ### Analysis Dashboard
 
-![Dashboard](./trutht-result.png)
+![Dashboard](public/trutht-result.png)
 
 ---
 
 ### System Architecture
 
-![Architecture](./trutht-dataflow.png)
+![Architecture](public/trutht-dataflow.png)
 
 ---
 
@@ -111,5 +111,5 @@ The model demonstrates high precision and strong generalization with minimal ove
 
 ## Author 
 
-**Name**: [Prince]
+**Name**: Prince
 
